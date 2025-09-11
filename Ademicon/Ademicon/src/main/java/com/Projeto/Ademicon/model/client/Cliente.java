@@ -1,12 +1,13 @@
-package com.Projeto.Ademicon.client;
+package com.Projeto.Ademicon.model.client;
 
-import com.Projeto.Ademicon.Address.Endereco;
+import com.Projeto.Ademicon.model.Address.Endereco;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Table(name ="cliente")
@@ -26,6 +27,6 @@ public class Cliente {
 
     @OneToMany
     @JoinColumn(name = "id_endereco")
-    private Endereco endereco;
+    private List<Endereco> endereco;  //tem que ser list porque um cliente pode ter varios endereços
 
 }

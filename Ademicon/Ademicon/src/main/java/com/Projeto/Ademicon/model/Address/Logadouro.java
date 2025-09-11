@@ -1,4 +1,4 @@
-package com.Projeto.Ademicon.Address;
+package com.Projeto.Ademicon.model.Address;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Table(name = "logadouro")
@@ -23,5 +24,5 @@ public class Logadouro {
 
     @OneToMany
     @JoinColumn(name = "id_endereco")
-    private Endereco endereco;
+    private List<Endereco> endereco;
 }

@@ -1,4 +1,4 @@
-package com.Projeto.Ademicon.Address;
+package com.Projeto.Ademicon.model.Address;
 
 import jakarta.persistence.*;
 import lombok.Getter;
