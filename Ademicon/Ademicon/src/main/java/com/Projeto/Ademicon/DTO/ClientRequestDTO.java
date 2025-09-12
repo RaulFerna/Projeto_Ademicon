@@ -13,5 +13,5 @@ public record ClientRequestDTO(
         String nomeResponsavel,
         String email,
         Date data_retorno,
-        List<Endereco> endereco
+        List<Endereco> endereo
 ) {}
