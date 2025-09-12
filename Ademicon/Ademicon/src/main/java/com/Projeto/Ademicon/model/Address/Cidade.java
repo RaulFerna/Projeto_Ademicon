@@ -23,7 +23,6 @@ public class Cidade {
     private String estado;
 
     @OneToMany
-    @JoinColumn(name = "id_logadouro")
-    private List<Logadouro> logadouro;
+    private List<Logradouro> logradouro;
 
 }

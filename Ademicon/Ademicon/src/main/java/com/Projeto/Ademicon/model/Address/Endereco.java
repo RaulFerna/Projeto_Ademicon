@@ -18,8 +18,17 @@ public class Endereco {
     private String numero;
     private String cep;
 
-    @OneToOne
-    @JoinColumn(name = "id_logadouro")
-    private Logadouro logadouro;
+    @ManyToOne
+    @JoinColumn(name = "id_logradouro")
+    private Logradouro logradouro;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cidade")
+    private Cidade cidade;
+
+    @ManyToOne
+    @JoinColumn(name =" id_bairro")
+    private Bairro bairro;
+
 
 }
