@@ -1,0 +1,7 @@
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
+CREATE TABLE IF NOT EXISTS estado(
+    id_estado SERIAL PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL,
+    CONSTRAINT estado_nome UNIQUE (nome)
+);

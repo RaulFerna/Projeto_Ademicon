@@ -1,6 +1,6 @@
 package com.Projeto.Ademicon.DTO;
 
-import com.Projeto.Ademicon.model.Address.Endereco;
+import com.Projeto.Ademicon.entit.Address.Endereco;
 
 import java.util.Date;
 import java.util.List;

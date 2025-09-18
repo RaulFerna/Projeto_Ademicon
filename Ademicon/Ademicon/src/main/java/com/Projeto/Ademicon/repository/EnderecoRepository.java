@@ -1,6 +1,6 @@
 package com.Projeto.Ademicon.repository;
 
-import com.Projeto.Ademicon.model.Address.Endereco;
+import com.Projeto.Ademicon.entit.Address.Endereco;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

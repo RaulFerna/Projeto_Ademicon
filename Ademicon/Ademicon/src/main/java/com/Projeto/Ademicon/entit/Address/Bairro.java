@@ -1,4 +1,4 @@
-package com.Projeto.Ademicon.model.Address;
+package com.Projeto.Ademicon.entit.Address;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,20 +7,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.UUID;
 
-@Table(name = "cidade")
+@Table(name = "bairro")
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cidade {
+
+public class Bairro {
     @Id
     @GeneratedValue
-    private UUID id_cidade;
+    private Integer id_bairro;
     private String nome;
-    private String estado;
 
     @OneToMany
     private List<Logradouro> logradouro;
