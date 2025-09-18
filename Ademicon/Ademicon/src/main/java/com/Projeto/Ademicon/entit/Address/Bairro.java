@@ -1,4 +1,4 @@
-package com.Projeto.Ademicon.model.Address;
+package com.Projeto.Ademicon.entit.Address;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,22 +7,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.UUID;
 
-@Table(name = "logadouro")
+@Table(name = "bairro")
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
 @Setter
-public class Logadouro {
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class Bairro {
     @Id
     @GeneratedValue
-    private UUID id_logadouro;
+    private Integer id_bairro;
     private String nome;
-    private String tipo;
 
     @OneToMany
-    @JoinColumn(name = "id_endereco")
-    private List<Endereco> endereco;
+    private List<Logradouro> logradouro;
+
 }
