@@ -1,10 +1,8 @@
-package com.Projeto.Ademicon.model.Address;
+package com.Projeto.Ademicon.entit.Address;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.UUID;
 
 @Entity
 @Table(name = "endereco")
@@ -14,7 +12,7 @@ public class Endereco {
 
     @Id
     @GeneratedValue
-    private UUID id;
+    private Integer id_endereco;
     private String numero;
     private String cep;
 
@@ -29,6 +27,10 @@ public class Endereco {
     @ManyToOne
     @JoinColumn(name =" id_bairro")
     private Bairro bairro;
+
+    @ManyToOne
+    @JoinColumn(name =" id_estado")
+    private Estado estado;
 
 
 }

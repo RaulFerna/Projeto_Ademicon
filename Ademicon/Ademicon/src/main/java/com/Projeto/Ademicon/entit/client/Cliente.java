@@ -1,12 +1,11 @@
-package com.Projeto.Ademicon.model.client;
+package com.Projeto.Ademicon.entit.client;
 
-import com.Projeto.Ademicon.model.Address.Endereco;
+import com.Projeto.Ademicon.entit.Address.Endereco;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 
 @Table(name ="cliente")
 @Entity
@@ -17,12 +16,11 @@ import java.util.UUID;
 public class Cliente {
     @Id
     @GeneratedValue
-    private UUID id;
+    private Integer id;
     private String nome;
     private String telefone;
     private String nomeResponsavel;
     private String email;
-    private Date data_retorno;
 
     @OneToMany
     @JoinColumn(name = "id_endereco")

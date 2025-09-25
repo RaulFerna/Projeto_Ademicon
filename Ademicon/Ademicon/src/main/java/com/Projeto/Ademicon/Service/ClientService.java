@@ -1,7 +1,7 @@
 package com.Projeto.Ademicon.Service;
 
 import com.Projeto.Ademicon.DTO.ClientRequestDTO;
-import com.Projeto.Ademicon.model.client.Cliente;
+import com.Projeto.Ademicon.entit.client.Cliente;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,7 +13,6 @@ public class ClientService {
       newClient.setEmail(data.email());
       newClient.setTelefone(data.telefone());
       newClient.setNomeResponsavel(data.nomeResponsavel());
-      newClient.setData_retorno(data.data_retorno());
 
       return newClient;
     }

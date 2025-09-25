@@ -1,4 +1,4 @@
-package com.Projeto.Ademicon.model.Address;
+package com.Projeto.Ademicon.entit.Address;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.UUID;
 
 @Table(name = "logadouro")
 @Entity
@@ -18,7 +17,7 @@ import java.util.UUID;
 public class Logradouro {
     @Id
     @GeneratedValue
-    private UUID id_logradouro;
+    private Integer id_logradouro;
     private String nome;
     private String tipo;
 
