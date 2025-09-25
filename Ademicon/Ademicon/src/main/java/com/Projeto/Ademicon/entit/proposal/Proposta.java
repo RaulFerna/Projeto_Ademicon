@@ -20,7 +20,7 @@ public class Proposta {
     @Id
     @GeneratedValue
     private Integer id_proposta;
-    private LocalDateTime data_visita;
+    private LocalDateTime data_visita = LocalDateTime.now();
     private Date retorno_previsto;
     private String categoria_proposta;
     private Integer valor_proposta;
