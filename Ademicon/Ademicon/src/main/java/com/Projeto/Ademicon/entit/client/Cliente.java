@@ -16,7 +16,7 @@ import java.util.List;
 public class Cliente {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer id_cliente;
     private String nome;
     private String telefone;
     private String nomeResponsavel;
