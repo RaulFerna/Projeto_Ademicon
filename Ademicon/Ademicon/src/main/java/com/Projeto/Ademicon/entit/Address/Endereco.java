@@ -11,7 +11,7 @@ import lombok.Setter;
 public class Endereco {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_endereco;
     private String numero;
     private String cep;
@@ -21,16 +21,7 @@ public class Endereco {
     private Logradouro logradouro;
 
     @ManyToOne
-    @JoinColumn(name = "id_cidade")
-    private Cidade cidade;
-
-    @ManyToOne
-    @JoinColumn(name =" id_bairro")
+    @JoinColumn(name ="id_bairro")
     private Bairro bairro;
-
-    @ManyToOne
-    @JoinColumn(name =" id_estado")
-    private Estado estado;
-
 
 }

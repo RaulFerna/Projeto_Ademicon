@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Table(name = "logadouro")
+@Table(name = "logradouro")
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,7 +16,7 @@ import java.util.List;
 @Setter
 public class Logradouro {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_logradouro;
     private String nome;
     private String tipo;
