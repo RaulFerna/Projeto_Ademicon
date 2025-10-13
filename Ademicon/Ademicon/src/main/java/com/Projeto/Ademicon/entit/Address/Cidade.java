@@ -16,15 +16,16 @@ import java.util.List;
 @NoArgsConstructor
 public class Cidade {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_cidade;
     private String nome;
 
 
-    @OneToMany
+    @OneToMany(mappedBy = "cidade")
     private List<Logradouro> logradouro;
 
     @ManyToOne
+    @JoinColumn(name ="id_estado")
     private Estado estado;
 
 }

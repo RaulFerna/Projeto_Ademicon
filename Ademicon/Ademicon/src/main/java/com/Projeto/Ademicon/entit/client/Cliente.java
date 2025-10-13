@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Cliente {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Faz com que o hibernate deixe o banco gerar, não tenta buscar uma sequencia manualmente
     private Integer id_cliente;
     private String nome;
     private String telefone;

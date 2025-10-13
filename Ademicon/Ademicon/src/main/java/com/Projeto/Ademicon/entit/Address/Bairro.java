@@ -17,11 +17,15 @@ import java.util.List;
 
 public class Bairro {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_bairro;
     private String nome;
 
-    @OneToMany
+    @OneToMany(mappedBy = "bairro")
     private List<Logradouro> logradouro;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cidade")
+    private Cidade cidade;
 
 }
