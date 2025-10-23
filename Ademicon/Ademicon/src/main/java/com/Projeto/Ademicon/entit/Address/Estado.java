@@ -16,10 +16,10 @@ import java.util.List;
 @NoArgsConstructor
 public class Estado {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_estado;
     private String nome;
 
-    @OneToMany
+    @OneToMany(mappedBy = "estado") //mappedBy evita que o JPA crie tabelas intermediárias desnecessárias
     private List<Cidade> cidade;
 }

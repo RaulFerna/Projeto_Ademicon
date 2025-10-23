@@ -20,12 +20,11 @@ import java.util.List;
 @NoArgsConstructor
 public class Proposta {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_proposta;
     private LocalDateTime data_visita = LocalDateTime.now();
     private Date retorno_previsto;
     private String categoria_proposta;
-    private Integer valor_proposta;
     private String campo_observacao;
     private Double valor;
 

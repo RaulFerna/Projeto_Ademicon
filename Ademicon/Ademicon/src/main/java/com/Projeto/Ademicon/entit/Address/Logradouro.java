@@ -8,7 +8,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Table(name = "logadouro")
+@Table(name = "logradouro")
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,17 +16,17 @@ import java.util.List;
 @Setter
 public class Logradouro {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_logradouro;
     private String nome;
     private String tipo;
 
     @ManyToOne
-    @JoinColumn(name = "id_bairro") // Coluna na tabela 'logradouro' que referencia o bairro
+    @JoinColumn(name = "id_bairro")
     private Bairro bairro;
 
     @ManyToOne
-    @JoinColumn(name = "id_cidade") // Coluna na tabela 'logradouro' que referencia a cidade
+    @JoinColumn(name = "id_cidade")
     private Cidade cidade;
 
     // O 'mappedBy' indica que o relacionamento é gerenciado pelo campo 'logradouro' na entidade Endereco.

@@ -1,7 +1,0 @@
-CREATE EXTENSION IF NOT EXISTS "pgcrypto";
-
-CREATE TABLE IF NOT EXISTS logradouro(
-    id_logradouro SERIAL PRIMARY KEY,
-    nome VARCHAR (100) NOT NULL,
-    tipo VARCHAR (10) NOT NULL
-);
