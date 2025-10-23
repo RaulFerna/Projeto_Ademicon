@@ -20,8 +20,4 @@ public class Endereco {
     @JoinColumn(name = "id_logradouro")
     private Logradouro logradouro;
 
-    @ManyToOne
-    @JoinColumn(name ="id_bairro")
-    private Bairro bairro;
-
 }

@@ -22,11 +22,11 @@ public class Logradouro {
     private String tipo;
 
     @ManyToOne
-    @JoinColumn(name = "id_bairro") // Coluna na tabela 'logradouro' que referencia o bairro
+    @JoinColumn(name = "id_bairro")
     private Bairro bairro;
 
     @ManyToOne
-    @JoinColumn(name = "id_cidade") // Coluna na tabela 'logradouro' que referencia a cidade
+    @JoinColumn(name = "id_cidade")
     private Cidade cidade;
 
     // O 'mappedBy' indica que o relacionamento é gerenciado pelo campo 'logradouro' na entidade Endereco.
