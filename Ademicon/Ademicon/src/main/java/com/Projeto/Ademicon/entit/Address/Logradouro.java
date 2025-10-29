@@ -19,7 +19,10 @@ public class Logradouro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_logradouro;
     private String nome;
-    private String tipo;
+
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_logradouro")
+    private TipoLogradouro tipo;
 
     @ManyToOne
     @JoinColumn(name = "id_bairro")

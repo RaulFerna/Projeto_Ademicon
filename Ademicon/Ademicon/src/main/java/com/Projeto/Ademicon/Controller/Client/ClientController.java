@@ -18,8 +18,13 @@ public class ClientController {
     private ClientService clientService;
 
     @PostMapping
-    ResponseEntity<Cliente> create(@RequestBody ClientRequestDTO body){
-        Cliente newClient = this.clientService.createCLient(body);
-        return ResponseEntity.ok(newClient);
+    ResponseEntity<?> create(@RequestBody ClientRequestDTO body){
+        try {
+            Cliente newClient = this.clientService.createCLient(body);
+            return ResponseEntity.ok(newClient);
+        }catch (IllegalArgumentException e){
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+
     }
 }

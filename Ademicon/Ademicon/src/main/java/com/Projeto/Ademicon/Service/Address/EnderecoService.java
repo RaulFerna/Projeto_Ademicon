@@ -27,10 +27,12 @@ public class EnderecoService {
                endDTO.getEstado()
        );
 
-       Endereco e = new Endereco();
-       e.setLogradouro(logradouro);
-       e.setNumero(endDTO.getNumero());
-       e.setCep(endDTO.getCep());
-       return enderecoRepository.save(e);
+       return enderecoRepository.findByLogradouroAndNumeroAndCep(logradouro, endDTO.getNumero(), endDTO.getCep()).orElseGet(() ->{
+           Endereco e = new Endereco();
+           e.setLogradouro(logradouro);
+           e.setNumero(endDTO.getNumero());
+           e.setCep(endDTO.getCep());
+           return enderecoRepository.save(e);
+       });
    }
 }

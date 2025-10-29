@@ -1,9 +1,6 @@
 package com.Projeto.Ademicon.Service.Address;
 
-import com.Projeto.Ademicon.entit.Address.Bairro;
-import com.Projeto.Ademicon.entit.Address.Cidade;
-import com.Projeto.Ademicon.entit.Address.Estado;
-import com.Projeto.Ademicon.entit.Address.Logradouro;
+import com.Projeto.Ademicon.entit.Address.*;
 import com.Projeto.Ademicon.repository.Addresses.LogradouroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,11 +14,13 @@ public class LogradouroService {
     private CidadeService cidadeService;
     @Autowired
     private BairroService bairroService;
+    @Autowired
+    private TipoLograService tipoService;
 
-    public Logradouro createLogra (String nome, String tipo, String nomeBairro, String nomeCidade, String nomeEstado){
+    public Logradouro createLogra (String nome, String tipoLogra, String nomeBairro, String nomeCidade, String nomeEstado){
         Bairro bairro = bairroService.createBairro(nomeBairro, nomeCidade, nomeEstado);
         Cidade cidade = bairro.getCidade();
-
+        TipoLogradouro tipo = tipoService.createTipo(tipoLogra);
         return logradouroRepository.findByNomeAndTipoAndBairroAndCidade(nome, tipo, bairro, cidade).orElseGet(() -> {
             Logradouro e = new Logradouro();
             e.setNome(nome);

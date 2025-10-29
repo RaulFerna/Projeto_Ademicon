@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class ClientService {
 
@@ -23,6 +25,12 @@ public class ClientService {
     }
 
     public Cliente createCLient(ClientRequestDTO data){
+        Optional<Cliente> existente = clienteRepository.findByNomeAndEmail(data.nome(), data.email());
+
+        if(existente.isPresent()){
+            throw new IllegalArgumentException("Cliente já cadastrado");
+        }
+
       Cliente newClient = new Cliente();
       newClient.setNome(data.nome());
       newClient.setEmail(data.email());
