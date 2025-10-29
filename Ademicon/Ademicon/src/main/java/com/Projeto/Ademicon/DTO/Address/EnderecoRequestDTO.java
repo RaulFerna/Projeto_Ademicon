@@ -13,4 +13,4 @@ public class EnderecoRequestDTO {
     private String logradouro;
     private String numero;
     private String cep;
-}//Falta colocar o parametro de tipo de endereço
+}

@@ -35,4 +35,4 @@ public class EnderecoService {
            return enderecoRepository.save(e);
        });
    }
-}//Falta arrumar a service para poder receber o tipo de logradouro.
+}
